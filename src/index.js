@@ -118,59 +118,59 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 //     }    
 // }
 
-// class App extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             work: [{
-//                 description: 'Item number 1',
-//                 time: 10
-//             }],
-//             personal: [{
-//                 description: 'Item number 2',
-//                 time: 20
-//             }]
-//         }
-//         this.handleNewItem = this.handleNewItem.bind(this);
-//     }
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            work: [{
+                description: 'Item number 1',
+                time: 10
+            }],
+            personal: [{
+                description: 'Item number 2',
+                time: 20
+            }]
+        }
+        this.handleNewItem = this.handleNewItem.bind(this);
+    }
 
-//     handleNewItem = (item) => {
-//         console.log('line 125', item);
-//         let newItem = {
-//             description: item.description,
-//             time: item.time
-//         }
-//         this.setState(state => {
-//             return state[item.project] = [...state[item.project], newItem].sort(this.compare);
-//         });
-//     }
+    handleNewItem = (item) => {
+        console.log('line 125', item);
+        let newItem = {
+            description: item.description,
+            time: item.time
+        }
+        this.setState(state => {
+            return state[item.project] = [...state[item.project], newItem].sort(this.compare);
+        });
+    }
     
-//     // https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
-//     compare = (a,b) => {
-//         const keyA = a.time;
-//         const keyB = b.time;
-//         if (keyA < keyB) return 1;
-//         if (keyA > keyB) return -1;
-//         return 0;
-//     }
+    // https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
+    compare = (a,b) => {
+        const keyA = a.time;
+        const keyB = b.time;
+        if (keyA < keyB) return 1;
+        if (keyA > keyB) return -1;
+        return 0;
+    }
 
-//     render() {
-//         return (
-//             <div className="container mt-4">
-//                 <h1 className="text-center">Work Logger</h1>
-//                 <Form newItem={this.handleNewItem} />
-//                 <hr className="my-5" />
-//                 <div className="row">
-//                     <div className="col-4 offset-1">
-//                         <List items={this.state.work} />
-//                     </div>
-//                     <div className="col-4 offset-1">
-//                         <List items={this.state.personal} />
-//                     </div>
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
+    render() {
+        return (
+            <div className="container mt-4">
+                <h1 className="text-center">Work Logger</h1>
+                <Form newItem={this.handleNewItem} />
+                <hr className="my-5" />
+                <div className="row">
+                    <div className="col-4 offset-1">
+                        <List items={this.state.work} />
+                    </div>
+                    <div className="col-4 offset-1">
+                        <List items={this.state.personal} />
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
 
-// ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
