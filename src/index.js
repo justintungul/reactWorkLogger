@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-// // https://www.w3resource.com/javascript-exercises/javascript-date-exercise-13.php
-// function toHoursMins(mins) {
-//     let num = mins;
-//     let hours = (num / 60);
-//     let rhours = Math.floor(hours);
-//     let minutes = (hours - rhours) * 60;
-//     let rminutes = Math.round(minutes);
-//     return rhours + ":" + rminutes;
-// }
+// https://www.w3resource.com/javascript-exercises/javascript-date-exercise-13.php
+function toHoursMins(mins) {
+    let num = mins;
+    let hours = (num / 60);
+    let rhours = Math.floor(hours);
+    let minutes = (hours - rhours) * 60;
+    let rminutes = Math.round(minutes);
+    return rhours + ":" + rminutes;
+}
 
 class Item extends React.Component {
     render() {
