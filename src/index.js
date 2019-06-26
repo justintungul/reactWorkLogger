@@ -57,24 +57,24 @@ class Form extends React.Component {
         this.handleTime = this.handleTime.bind(this);
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        if (this.state.project.length > 0 && this.state.description.length > 0 && this.state.time > 0) {
-            this.props.newItem(this.state);
-        }
-    }
+    // handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     if (this.state.project.length > 0 && this.state.description.length > 0 && this.state.time > 0) {
+    //         this.props.newItem(this.state);
+    //     }
+    // }
 
-    handleProject = (e) => {
-        this.setState({project: e.target.value})
-    }
+    // handleProject = (e) => {
+    //     this.setState({project: e.target.value})
+    // }
 
-    handleDescription = (e) => {
-        this.setState({description: e.target.value});
-    }
+    // handleDescription = (e) => {
+    //     this.setState({description: e.target.value});
+    // }
     
-    handleTime = (e) => {
-        this.setState({time: e.target.value});
-    }
+    // handleTime = (e) => {
+    //     this.setState({time: e.target.value});
+    // }
 
     render() {
         return (
