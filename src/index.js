@@ -1,7 +1,7 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import './index.css';
-// import 'bootstrap/dist/css/bootstrap.min.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 // // https://www.w3resource.com/javascript-exercises/javascript-date-exercise-13.php
 // function toHoursMins(mins) {
