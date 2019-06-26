@@ -44,79 +44,79 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 //     }
 // }
 
-// class Form extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             project: '',
-//             description: '',
-//             time: 0
-//         }
-//         this.handleSubmit = this.handleSubmit.bind(this);
-//         this.handleDescription = this.handleDescription.bind(this);
-//         this.handleTime = this.handleTime.bind(this);
-//     }
+class Form extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            project: '',
+            description: '',
+            time: 0
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDescription = this.handleDescription.bind(this);
+        this.handleTime = this.handleTime.bind(this);
+    }
 
-//     handleSubmit = (e) => {
-//         e.preventDefault();
-//         if (this.state.project.length > 0 && this.state.description.length > 0 && this.state.time > 0) {
-//             this.props.newItem(this.state);
-//         }
-//     }
+    handleSubmit = (e) => {
+        e.preventDefault();
+        if (this.state.project.length > 0 && this.state.description.length > 0 && this.state.time > 0) {
+            this.props.newItem(this.state);
+        }
+    }
 
-//     handleProject = (e) => {
-//         this.setState({project: e.target.value})
-//     }
+    handleProject = (e) => {
+        this.setState({project: e.target.value})
+    }
 
-//     handleDescription = (e) => {
-//         this.setState({description: e.target.value});
-//     }
+    handleDescription = (e) => {
+        this.setState({description: e.target.value});
+    }
     
-//     handleTime = (e) => {
-//         this.setState({time: e.target.value});
-//     }
+    handleTime = (e) => {
+        this.setState({time: e.target.value});
+    }
 
-//     render() {
-//         return (
-//             <form className="col-6 offset-3 mt-5" onSubmit={this.handleSubmit}>
-//                 <div className="form-group row">
-//                     <label className="col-sm-2 col-form-label">Project</label>
-//                     <div className="col-sm-10">
-//                         <select className="form-control" onChange={this.handleProject}>
-//                             <option defaultValue>Select Project</option>
-//                             <option value="personal">Personal</option>
-//                             <option value="work">Work</option>
-//                         </select>
-//                     </div>
-//                 </div>
-//                 <div className="form-group row">
-//                     <label className="col-sm-2 col-form-label">Description</label>
-//                     <div className="col-sm-10">
-//                         <input 
-//                             type="text" 
-//                             className="form-control" 
-//                             placeholder="Enter a description"
-//                             onChange={this.handleDescription}
-//                         />
-//                     </div>
-//                 </div>
-//                 <div className="form-group row">
-//                     <label className="col-sm-2 col-form-label">Minutes</label>
-//                     <div className="col-sm-10">
-//                         <input 
-//                             type="number" 
-//                             className="form-control" 
-//                             min="0" max="240" 
-//                             placeholder="0"
-//                             onChange={this.handleTime}
-//                         />
-//                     </div>
-//                 </div>
-//                 <button type="submit" className="btn btn-primary w-100 mt-3">Add</button>
-//             </form>
-//         )
-//     }    
-// }
+    render() {
+        return (
+            <form className="col-6 offset-3 mt-5" onSubmit={this.handleSubmit}>
+                <div className="form-group row">
+                    <label className="col-sm-2 col-form-label">Project</label>
+                    <div className="col-sm-10">
+                        <select className="form-control" onChange={this.handleProject}>
+                            <option defaultValue>Select Project</option>
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                        </select>
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label className="col-sm-2 col-form-label">Description</label>
+                    <div className="col-sm-10">
+                        <input 
+                            type="text" 
+                            className="form-control" 
+                            placeholder="Enter a description"
+                            onChange={this.handleDescription}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label className="col-sm-2 col-form-label">Minutes</label>
+                    <div className="col-sm-10">
+                        <input 
+                            type="number" 
+                            className="form-control" 
+                            min="0" max="240" 
+                            placeholder="0"
+                            onChange={this.handleTime}
+                        />
+                    </div>
+                </div>
+                <button type="submit" className="btn btn-primary w-100 mt-3">Add</button>
+            </form>
+        )
+    }    
+}
 
 class App extends React.Component {
     constructor(props) {
