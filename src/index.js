@@ -146,13 +146,13 @@ class App extends React.Component {
     }
     
     // https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
-    // compare = (a,b) => {
-    //     const keyA = a.time;
-    //     const keyB = b.time;
-    //     if (keyA < keyB) return 1;
-    //     if (keyA > keyB) return -1;
-    //     return 0;
-    // }
+    compare = (a,b) => {
+        const keyA = a.time;
+        const keyB = b.time;
+        if (keyA < keyB) return 1;
+        if (keyA > keyB) return -1;
+        return 0;
+    }
 
     render() {
         return (
