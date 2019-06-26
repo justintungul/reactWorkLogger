@@ -13,36 +13,36 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 //     return rhours + ":" + rminutes;
 // }
 
-// class Item extends React.Component {
-//     render() {
-//         const item = this.props.item;
-//         return (
-//             <div>
-//                 <h5>
-//                     <span className="mr-3">{toHoursMins(item.time)}</span>
-//                     <span>{item.description}</span>
-//                 </h5>
-//             </div>
-//         )
-//     }
-// }
+class Item extends React.Component {
+    render() {
+        const item = this.props.item;
+        return (
+            <div>
+                <h5>
+                    <span className="mr-3">{toHoursMins(item.time)}</span>
+                    <span>{item.description}</span>
+                </h5>
+            </div>
+        )
+    }
+}
 
-// class List extends React.Component {
-//     render() {
-//         const items = this.props.items.map((item, idx) => {
-//             return <Item key={idx} item={item} />
-//         })
-//         const total = this.props.items.reduce((a,b) => {
-//             return {time: parseInt(a.time) + parseInt(b.time)}
-//         })
-//         return (
-//             <div>
-//                 <h3>Work<span className="float-right">{toHoursMins(total.time)}</span></h3>
-//                 {items}
-//             </div>
-//         )
-//     }
-// }
+class List extends React.Component {
+    render() {
+        const items = this.props.items.map((item, idx) => {
+            return <Item key={idx} item={item} />
+        })
+        const total = this.props.items.reduce((a,b) => {
+            return {time: parseInt(a.time) + parseInt(b.time)}
+        })
+        return (
+            <div>
+                <h3>Work<span className="float-right">{toHoursMins(total.time)}</span></h3>
+                {items}
+            </div>
+        )
+    }
+}
 
 class Form extends React.Component {
     constructor(props) {
@@ -57,24 +57,24 @@ class Form extends React.Component {
         this.handleTime = this.handleTime.bind(this);
     }
 
-    // handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     if (this.state.project.length > 0 && this.state.description.length > 0 && this.state.time > 0) {
-    //         this.props.newItem(this.state);
-    //     }
-    // }
+    handleSubmit = (e) => {
+        e.preventDefault();
+        if (this.state.project.length > 0 && this.state.description.length > 0 && this.state.time > 0) {
+            this.props.newItem(this.state);
+        }
+    }
 
-    // handleProject = (e) => {
-    //     this.setState({project: e.target.value})
-    // }
+    handleProject = (e) => {
+        this.setState({project: e.target.value})
+    }
 
-    // handleDescription = (e) => {
-    //     this.setState({description: e.target.value});
-    // }
+    handleDescription = (e) => {
+        this.setState({description: e.target.value});
+    }
     
-    // handleTime = (e) => {
-    //     this.setState({time: e.target.value});
-    // }
+    handleTime = (e) => {
+        this.setState({time: e.target.value});
+    }
 
     render() {
         return (
@@ -146,13 +146,13 @@ class App extends React.Component {
     }
     
     // https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
-    compare = (a,b) => {
-        const keyA = a.time;
-        const keyB = b.time;
-        if (keyA < keyB) return 1;
-        if (keyA > keyB) return -1;
-        return 0;
-    }
+    // compare = (a,b) => {
+    //     const keyA = a.time;
+    //     const keyB = b.time;
+    //     if (keyA < keyB) return 1;
+    //     if (keyA > keyB) return -1;
+    //     return 0;
+    // }
 
     render() {
         return (
